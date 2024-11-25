@@ -1,4 +1,4 @@
-package com.example.voxify.data
+package com.example.voxify.data.entities
 
 import java.util.Calendar
 
@@ -7,12 +7,9 @@ data class Translations (
     var transcription_id: Long,
     var translated_text: String = "",
     var target_language: String,
-    var created_at: Long
+    var created_at: Long = Calendar.getInstance().timeInMillis
 ) {
 
-    init {
-        created_at = Calendar.getInstance().timeInMillis
-    }
     companion object {
         const val TABLE_NAME = "Translations"
         const val COLUMN_ID = "id"

@@ -3,9 +3,10 @@ package com.example.voxify.utils
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.voxify.data.Recordings
-import com.example.voxify.data.Transcriptions
-import com.example.voxify.data.Translations
+import com.example.voxify.data.entities.Recordings
+import com.example.voxify.data.entities.Transcriptions
+import com.example.voxify.data.entities.Translations
+import org.intellij.lang.annotations.Language
 
 class DbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
@@ -14,6 +15,7 @@ class DbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         const val DATABASE_NAME = "VoxiFyDatabase.db"
 
         // Tabla Recordings
+        @Language("SQL")
         private const val SQL_CREATE_TABLE_RECORDINGS =
             """
             CREATE TABLE ${Recordings.TABLE_NAME} (
@@ -29,6 +31,7 @@ class DbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         private const val SQL_DELETE_TABLE_RECORDINGS = "DROP TABLE IF EXISTS ${Recordings.TABLE_NAME}"
 
         // Tabla Transcriptions
+        @Language("SQL")
         private const val SQL_CREATE_TABLE_TRANSCRIPTIONS =
             """
             CREATE TABLE ${Transcriptions.TABLE_NAME} (
@@ -46,6 +49,7 @@ class DbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         private const val SQL_DELETE_TABLE_TRANSCRIPTIONS = "DROP TABLE IF EXISTS ${Transcriptions.TABLE_NAME}"
 
         // Tabla Translations
+        @Language("SQL")
         private const val SQL_CREATE_TABLE_TRANSLATIONS =
             """
             CREATE TABLE ${Translations.TABLE_NAME} (

@@ -1,21 +1,18 @@
-package com.example.voxify.data
+package com.example.voxify.data.entities
 
-import org.intellij.lang.annotations.Language
 import java.util.Calendar
 
-data class Transcriptions (
+data class Transcriptions(
     val id: Long,
     var recording_id: Long,
     var text: String = "",
     var language: String,
     var grammar_checked: Boolean = false,
-    var grammar_issues: String,
-    var created_at: Long
+    var grammar_issues: String = "",
+    var created_at: Long =Calendar.getInstance().timeInMillis
 ) {
 
-    init {
-        created_at = Calendar.getInstance().timeInMillis
-    }
+
     companion object {
         const val TABLE_NAME = "Transcriptions"
         const val COLUMN_ID = "id"
@@ -34,6 +31,6 @@ data class Transcriptions (
             COLUMN_GRAMMAR_CHECKED,
             COLUMN_GRAMMAR_ISSUES,
             COLUMN_DATE,
-            )
+        )
     }
 }

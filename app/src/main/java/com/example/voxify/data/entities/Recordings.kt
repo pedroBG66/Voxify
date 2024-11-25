@@ -1,4 +1,4 @@
-package com.example.voxify.data
+package com.example.voxify.data.entities
 
 import java.util.Calendar
 
@@ -8,11 +8,11 @@ data class Recordings (
     var description: String = "",
     var file_path: String,
     var recording_duration: Int,
-    var created_at: Long
+    var created_at: Long =Calendar.getInstance().timeInMillis
 ) {
-
     init {
-        created_at = Calendar.getInstance().timeInMillis
+        require(recording_duration >= 0) { "La duración de la grabación no puede ser negativa" }
+        require(file_path.isNotBlank()) { "El path del archivo no puede estar vacío" }
     }
     companion object {
         const val TABLE_NAME = "Recordings"
@@ -20,7 +20,7 @@ data class Recordings (
         const val COLUMN_NAME_TITLE = "title"
         const val COLUMN_NAME_DESCRIPTION = "description"
         const val COLUMN_NAME_FILE_PATH = "file_path"
-        const val COLUMN_RECORDING_DURATION = "recording_duration"
+        const val COLUMN_NAME_RECORDING_DURATION = "recording_duration"
         const val COLUMN_NAME_DATE = "created_at"
 
         val COLUMN_NAMES = arrayOf(
@@ -28,7 +28,7 @@ data class Recordings (
             COLUMN_NAME_TITLE,
             COLUMN_NAME_DESCRIPTION,
             COLUMN_NAME_FILE_PATH,
-            COLUMN_RECORDING_DURATION,
+            COLUMN_NAME_RECORDING_DURATION,
             COLUMN_NAME_DATE,
         )
     }
