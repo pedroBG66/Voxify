@@ -23,7 +23,7 @@ class DbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
                  ${Recordings.COLUMN_NAME_TITLE} TEXT,
                  ${Recordings.COLUMN_NAME_DESCRIPTION} TEXT,
                 ${Recordings.COLUMN_NAME_FILE_PATH} TEXT,
-                 ${Recordings.COLUMN_RECORDING_DURATION}INTEGER,
+                 ${Recordings.COLUMN_NAME_RECORDING_DURATION} INTEGER,
                  ${Recordings.COLUMN_NAME_DATE} TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
             """
@@ -35,14 +35,14 @@ class DbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         private const val SQL_CREATE_TABLE_TRANSCRIPTIONS =
             """
             CREATE TABLE ${Transcriptions.TABLE_NAME} (
-                ${Transcriptions.COLUMN_ID}INTEGER PRIMARY KEY AUTOINCREMENT,
+                ${Transcriptions.COLUMN_ID} INTEGER PRIMARY KEY AUTOINCREMENT,
                 ${Transcriptions.COLUMN_NAME_RECORDING_ID} INTEGER,
                 ${Transcriptions.COLUMN_NAME_TEXT} TEXT,
                 ${Transcriptions.COLUMN_NAME_LANGUAGE} TEXT,
                 ${Transcriptions.COLUMN_GRAMMAR_CHECKED} BOOLEAN DEFAULT 0,
                 ${Transcriptions.COLUMN_GRAMMAR_ISSUES} TEXT,
                 ${Transcriptions.COLUMN_DATE} TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                FOREIGN KEY (recording_id) REFERENCES Recordings(id)
+                FOREIGN KEY (${Transcriptions.COLUMN_NAME_RECORDING_ID}) REFERENCES ${Recordings.TABLE_NAME}(${Recordings.COLUMN_ID})
             )
             """
 
@@ -53,12 +53,12 @@ class DbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         private const val SQL_CREATE_TABLE_TRANSLATIONS =
             """
             CREATE TABLE ${Translations.TABLE_NAME} (
-                ${Translations.COLUMN_ID}INTEGER PRIMARY KEY AUTOINCREMENT,
+                ${Translations.COLUMN_ID} INTEGER PRIMARY KEY AUTOINCREMENT,
                 ${Translations.COLUMN_NAME_TRANSCRIPTION_ID} INTEGER,
                 ${Translations.COLUMN_NAME_TRANSLATED_TEXT} TEXT,
                 ${Translations.COLUMN_NAME_TARGET_LANGUAGE} TEXT,
                 ${Translations.COLUMN_DATE} TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                FOREIGN KEY (transcription_id) REFERENCES Transcriptions(id)
+                FOREIGN KEY (${Translations.COLUMN_NAME_TRANSCRIPTION_ID}) REFERENCES ${Transcriptions.TABLE_NAME}(${Transcriptions.COLUMN_ID})
             )
             """
 
