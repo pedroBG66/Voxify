@@ -1,15 +1,17 @@
 package com.example.voxify.data.entities
 
+import com.google.gson.annotations.SerializedName
 import java.util.Calendar
 
+
 data class Transcriptions(
-    val id: Long,
-    var recording_id: Long,
-    var text: String = "",
-    var language: String,
-    var grammar_checked: Boolean = false,
-    var grammar_issues: String = "",
-    var created_at: Long =Calendar.getInstance().timeInMillis
+    @SerializedName("id") val id: Long,
+    @SerializedName("recording_id") var recordingId: String,
+    @SerializedName("text") var text: String = "",
+    @SerializedName("language") var language: String,
+    @SerializedName("grammar_checked") var grammarChecked: Int,
+    @SerializedName("grammar_issues") var grammarIssues: String = "",
+    @SerializedName("created_at") var createdAt: Long = Calendar.getInstance().timeInMillis
 ) {
 
 

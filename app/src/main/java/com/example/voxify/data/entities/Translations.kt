@@ -1,13 +1,14 @@
 package com.example.voxify.data.entities
 
+import com.google.gson.annotations.SerializedName
 import java.util.Calendar
 
-data class Translations (
-    val id: Long,
-    var transcription_id: Long,
-    var translated_text: String = "",
-    var target_language: String,
-    var created_at: Long = Calendar.getInstance().timeInMillis
+data class Translations(
+    @SerializedName("id") val id: Long,
+    @SerializedName("transcription_id") var transcriptionId: String,
+    @SerializedName("translated_text") var translatedText: String = "",
+    @SerializedName("target_language") var targetLanguage: String,
+    @SerializedName("created_at") var createdAt: Long = Calendar.getInstance().timeInMillis
 ) {
 
     companion object {

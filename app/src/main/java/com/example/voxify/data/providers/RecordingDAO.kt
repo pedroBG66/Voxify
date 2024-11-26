@@ -20,13 +20,13 @@ class RecordingDAO(val context: Context) {
         db.close()
     }
 
-    fun getContentValues(task: Recordings): ContentValues {
+    fun getContentValues(recordings: Recordings): ContentValues {
         return ContentValues().apply {
-            put(Recordings.COLUMN_NAME_TITLE, task.title)
-            put(Recordings.COLUMN_NAME_DESCRIPTION, task.description)
-            put(Recordings.COLUMN_NAME_FILE_PATH, task.file_path)
-            put(Recordings.COLUMN_NAME_RECORDING_DURATION, task.recording_duration)
-            put(Recordings.COLUMN_NAME_DATE, task.created_at)
+            put(Recordings.COLUMN_NAME_TITLE, recordings.title)
+            put(Recordings.COLUMN_NAME_DESCRIPTION, recordings.description)
+            put(Recordings.COLUMN_NAME_FILE_PATH, recordings.filePath)
+            put(Recordings.COLUMN_NAME_RECORDING_DURATION, recordings.recordingDuration)
+            put(Recordings.COLUMN_NAME_DATE, recordings.createdAt)
         }
 
     }
@@ -35,12 +35,12 @@ class RecordingDAO(val context: Context) {
         val id = cursor.getLong(cursor.getColumnIndexOrThrow(Recordings.COLUMN_ID))
         val title = cursor.getString(cursor.getColumnIndexOrThrow(Recordings.COLUMN_NAME_TITLE))
         val description = cursor.getString(cursor.getColumnIndexOrThrow(Recordings.COLUMN_NAME_DESCRIPTION))
-        val file_path = cursor.getInt(cursor.getColumnIndexOrThrow(Recordings.COLUMN_NAME_FILE_PATH))
-        val recording_duration = cursor.getInt(cursor.getColumnIndexOrThrow(Recordings.COLUMN_NAME_RECORDING_DURATION))
-        val date = cursor.getLong(cursor.getColumnIndexOrThrow(Recordings.COLUMN_NAME_DATE))
+        val filePath = cursor.getInt(cursor.getColumnIndexOrThrow(Recordings.COLUMN_NAME_FILE_PATH))
+        val recordingDuration = cursor.getInt(cursor.getColumnIndexOrThrow(Recordings.COLUMN_NAME_RECORDING_DURATION))
+        val createdAt = cursor.getLong(cursor.getColumnIndexOrThrow(Recordings.COLUMN_NAME_DATE))
 
 
-        return Recordings(id, title, description, file_path.toString(), recording_duration,date)
+        return Recordings(id, title, description, filePath.toString(), recordingDuration,createdAt)
     }
 
     fun insert(recordings: Recordings) {

@@ -19,10 +19,10 @@ class DbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         private const val SQL_CREATE_TABLE_RECORDINGS =
             """
             CREATE TABLE ${Recordings.TABLE_NAME} (
-                ${Recordings.COLUMN_ID} INTEGER PRIMARY KEY AUTOINCREMENT,
+                 ${Recordings.COLUMN_ID} INTEGER PRIMARY KEY AUTOINCREMENT,
                  ${Recordings.COLUMN_NAME_TITLE} TEXT,
                  ${Recordings.COLUMN_NAME_DESCRIPTION} TEXT,
-                ${Recordings.COLUMN_NAME_FILE_PATH} TEXT,
+                 ${Recordings.COLUMN_NAME_FILE_PATH} TEXT,
                  ${Recordings.COLUMN_NAME_RECORDING_DURATION} INTEGER,
                  ${Recordings.COLUMN_NAME_DATE} TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )

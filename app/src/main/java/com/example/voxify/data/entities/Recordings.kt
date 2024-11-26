@@ -1,18 +1,19 @@
 package com.example.voxify.data.entities
 
+import com.google.gson.annotations.SerializedName
 import java.util.Calendar
 
 data class Recordings (
-    val id: Long,
-    var title: String,
-    var description: String = "",
-    var file_path: String,
-    var recording_duration: Int,
-    var created_at: Long =Calendar.getInstance().timeInMillis
+    @SerializedName("id") val id: Long,
+    @SerializedName("title") var title: String,
+    @SerializedName("description") var description: String = "",
+    @SerializedName("file_path") var filePath: String,
+    @SerializedName("recording_duration") var recordingDuration: Int,
+    @SerializedName("created_at") var createdAt: Long = Calendar.getInstance().timeInMillis
 ) {
     init {
-        require(recording_duration >= 0) { "La duración de la grabación no puede ser negativa" }
-        require(file_path.isNotBlank()) { "El path del archivo no puede estar vacío" }
+        require(recordingDuration >= 0) { "La duración de la grabación no puede ser negativa" }
+        require(filePath.isNotBlank()) { "El path del archivo no puede estar vacío" }
     }
     companion object {
         const val TABLE_NAME = "Recordings"
