@@ -21,36 +21,5 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-    testDatabase()
-
-    }
-    private fun testDatabase() {
-        val dao = RecordingDAO(this)
-
-        // Crear un nuevo registro
-        val recording = Recordings(
-            id = -1, // El ID será generado automáticamente por la base de datos si es autoincremental
-            title = "Test Recording",
-            description = "Description for test recording",
-            file_path = "/path/to/test/file",
-            recording_duration = 180,
-            created_at = System.currentTimeMillis()
-        )
-
-        // Insertar el registro
-        dao.insert(recording)
-        Log.d("DatabaseTest", "Registro insertado: $recording")
-
-        // Obtener todos los registros
-        val recordingsList = dao.findAll()
-        Log.d("DatabaseTest", "Todos los registros: $recordingsList")
-
-        // Buscar un registro específico (por ejemplo, el primer ID)
-        if (recordingsList.isNotEmpty()) {
-            val firstRecording = dao.findById(recordingsList.first().id)
-            Log.d("DatabaseTest", "Primer registro encontrado: $firstRecording")
-        } else {
-            Log.d("DatabaseTest", "No se encontraron registros en la base de datos.")
-        }
     }
 }

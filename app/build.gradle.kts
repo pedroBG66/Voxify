@@ -36,9 +36,12 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
 }
 
 dependencies {
+
+    implementation (libs.translate)
     implementation (libs.gson)
     implementation (libs.androidx.sqlite)
     implementation(libs.androidx.core.ktx)

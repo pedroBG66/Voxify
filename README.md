@@ -4,12 +4,12 @@
 
 # Functions of the App:(MVP)
 ## Record Audio and store it locally
-## Transcribe the audio using API
+## Transcribe the audio using API or ML kit
 ## Show transcription and allow its translation
 ## Reproduce the audio or text with voice
 
 ## TODO PRIMER DIA
-#### SQLite for local database.
-#### Retrofit Client to make API calls.
+
+#### Retrofit Client to make API calls.???only if necessary working with ML kit
 #### Jetpack Compose for UI.
 
