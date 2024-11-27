@@ -11,12 +11,16 @@ appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.3"
 constraintlayout = "2.2.0"
+materialVersion = "1.9.0"
+navigationFragmentKtx = "2.8.4"
 speechRecognition = "1.0.0"
 sqlite = "2.4.0"
 translate = "17.0.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
 androidx-sqlite = { module = "androidx.sqlite:sqlite", version.ref = "sqlite" }
 google-cloud-speech = { module = "com.google.cloud:google-cloud-speech", version.ref = "googleCloudSpeech" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
@@ -27,6 +31,7 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+material-v190 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
 speech-recognition = { module = "com.google.mlkit:speech-recognition", version.ref = "speechRecognition" }
 translate = { module = "com.google.mlkit:translate", version.ref = "translate" }
 

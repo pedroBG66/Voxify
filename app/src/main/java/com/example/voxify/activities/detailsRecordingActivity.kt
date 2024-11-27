@@ -5,21 +5,19 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import com.example.voxify.R
-import com.example.voxify.databinding.ActivityMainBinding
+import com.example.voxify.databinding.ActivityDetailsRecordingBinding
 
-class MainActivity : AppCompatActivity() {
+class detailsRecordingActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
+
+    lateinit var binding: ActivityDetailsRecordingBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        // Configurar ViewBinding
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityDetailsRecordingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
@@ -28,12 +26,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // Configurar el NavController
-        val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        val navController = navHostFragment.navController
-
-        // Configurar BottomNavigationView con el NavController
-        binding.bottomNavigationView.setupWithNavController(navController)
     }
+
+
 }

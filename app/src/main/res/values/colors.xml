@@ -3,7 +3,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#9E84FB</color>
-    <color name="secundary">#E7453A </color>
+    <color name="stop">#E7453A </color>
     <color name="stripes">#C0A7F6 </color>
+
+    <color name="buttonTabPrimary">#6200EE</color>
+    <color name="buttonTabOnSurface">#888888</color>
+    <color name="buttonTabPrimaryVariant">#3700B3</color>
 
 </resources>

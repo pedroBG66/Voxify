@@ -8,8 +8,13 @@
 ## Show transcription and allow its translation
 ## Reproduce the audio or text with voice
 
-## TODO PRIMER DIA
+## TODO MAÑANA
 
-#### Retrofit Client to make API calls.???only if necessary working with ML kit
-#### Jetpack Compose for UI.
+#### Recicler view, adapter, holder para visualizar las grabaciones
+#### añadir las funcionalidades de editar y borrar
+#### conectar con la base de batos
 
+## TODO viernes
+
+### ver si podemos implementar la transcripcion a texto
+### ver si podemos implementar la traduccion

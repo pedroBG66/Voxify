@@ -6,4 +6,25 @@
     </style>
 
     <style name="Theme.Voxify" parent="Base.Theme.Voxify" />
+
+    <!-- Estilo personalizado para BottomNavigationView -->
+    <style name="Widget.Voxify.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconSize">24dp</item> <!-- Tamaño de íconos -->
+        <item name="itemTextAppearanceActive">@style/TextAppearance.Voxify.BottomNav.Active</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.Voxify.BottomNav.Inactive</item>
+    </style>
+
+    <!-- Estilos de texto para ítems activos e inactivos -->
+    <style name="TextAppearance.Voxify.BottomNav.Active" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/buttonTabPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Voxify.BottomNav.Inactive" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/buttonTabOnSurface</item>
+    </style>
+
+    <!-- Este ítem debería ir dentro de los estilos de aplicación -->
+    <item name="bottomNavigationStyle" type="style">@style/Widget.Voxify.BottomNavigationView</item>
 </resources>

@@ -2,5 +2,14 @@
     <string name="app_name">Voxify</string>
     <string name="Hero_Text">Record your voice</string>
     <string name="Hero_Button_Text">Start</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_home">Hello blank HOME</string>
+    <string name="hello_records">Hello blank record</string>
+    <string name="hello_profile">Hello blank profile</string>
+
+    <string name="home_bottom_tab">Home</string>
+    <string name="recording_bottom_tab">Record</string>
+    <string name="profile_bottom_tab">Profile</string>
+
 
 </resources>
