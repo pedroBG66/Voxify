@@ -10,11 +10,13 @@
 
 ## TODO MAÑANA
 
-#### Recicler view, adapter, holder para visualizar las grabaciones
+
+
 #### añadir las funcionalidades de editar y borrar
-#### conectar con la base de batos
+### cambiar lo de mipmap y poner una imagen de fondo icono de la app
+### Ver como ajustar el bottom tab
 
 ## TODO viernes
 
-### ver si podemos implementar la transcripcion a texto
+### ver si podemos implementar la transcripcion a texto con Vosk
 ### ver si podemos implementar la traduccion

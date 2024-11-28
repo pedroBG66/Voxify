@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Voxify"
         tools:targetApi="31">
         <activity
-            android:name=".activities.detailsRecordingActivity"
+            android:name=".activities.DetailsRecordingActivity"
             android:exported="false" />
         <activity
             android:name=".activities.AudioRecordActivity"

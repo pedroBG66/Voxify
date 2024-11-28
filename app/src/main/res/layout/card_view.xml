@@ -2,7 +2,6 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/recording_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -16,38 +15,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Titulo -->
-        <TextView
-            android:id="@+id/title_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recording Title"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:maxLines="1"
-            android:ellipsize="end"/>
+        <!-- Gráfico de la onda (representación visual de la grabación) -->
 
-        <!-- Descripción -->
-        <TextView
-            android:id="@+id/description_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Description of the recording"
-            android:textSize="14sp"
-            android:textColor="#757575"
-            android:maxLines="2"
-            android:ellipsize="end"
-            android:layout_marginTop="4dp"/>
 
-        <!-- Gráfico de la reproducción (puede ser un ImageView o un gráfico de barras) -->
-        <ImageView
-            android:id="@+id/audio_graph"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@mipmap/im_audio_graph_foreground"
-            android:layout_marginTop="8dp"/>
-
-        <!-- Duración -->
+        <!-- Duración de la grabación -->
         <TextView
             android:id="@+id/duration_text"
             android:layout_width="wrap_content"
@@ -57,7 +28,7 @@
             android:textStyle="bold"
             android:layout_marginTop="8dp"/>
 
-        <!-- Fecha de creación -->
+        <!-- Fecha de creación de la grabación -->
         <TextView
             android:id="@+id/created_at_text"
             android:layout_width="wrap_content"
@@ -66,13 +37,27 @@
             android:textSize="14sp"
             android:textColor="#757575"
             android:layout_marginTop="4dp"/>
+        <rm.com.audiowave.AudioWaveView
+            android:id="@+id/wave"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_margin="16dp"
+            app:animateExpansion="false"
+            app:chunkWidth="3dp"
+            app:chunkHeight="24dp"
+            app:minChunkHeight="2dp"
+            app:chunkSpacing="1dp"
+            app:chunkRadius="1dp"
+            app:touchable="true"
+            app:waveColor="@android:color/black" />
 
         <!-- Botón de reproducción -->
-        <ImageView
+        <ImageButton
             android:id="@+id/play_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_play_normal"
+            android:background="@android:color/transparent"
             android:layout_marginTop="12dp"
             android:contentDescription="Play Recording"
             android:layout_gravity="center"/>

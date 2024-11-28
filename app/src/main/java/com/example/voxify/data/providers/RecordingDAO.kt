@@ -35,12 +35,12 @@ class RecordingDAO(val context: Context) {
         val id = cursor.getLong(cursor.getColumnIndexOrThrow(Recordings.COLUMN_ID))
         val title = cursor.getString(cursor.getColumnIndexOrThrow(Recordings.COLUMN_NAME_TITLE))
         val description = cursor.getString(cursor.getColumnIndexOrThrow(Recordings.COLUMN_NAME_DESCRIPTION))
-        val filePath = cursor.getInt(cursor.getColumnIndexOrThrow(Recordings.COLUMN_NAME_FILE_PATH))
-        val recordingDuration = cursor.getInt(cursor.getColumnIndexOrThrow(Recordings.COLUMN_NAME_RECORDING_DURATION))
-        val createdAt = cursor.getLong(cursor.getColumnIndexOrThrow(Recordings.COLUMN_NAME_DATE))
+        val filePath = cursor.getString(cursor.getColumnIndexOrThrow(Recordings.COLUMN_NAME_FILE_PATH))
+        val recordingDuration = cursor.getString(cursor.getColumnIndexOrThrow(Recordings.COLUMN_NAME_RECORDING_DURATION))
+        val createdAt = cursor.getString(cursor.getColumnIndexOrThrow(Recordings.COLUMN_NAME_DATE))
 
 
-        return Recordings(id, title, description, filePath.toString(), recordingDuration,createdAt)
+        return Recordings(id, title, description, filePath, recordingDuration,createdAt)
     }
 
     fun insert(recordings: Recordings) {

@@ -3,16 +3,16 @@ package com.example.voxify.data.entities
 import com.google.gson.annotations.SerializedName
 import java.util.Calendar
 
-data class Recordings (
+data class Recordings(
     @SerializedName("id") val id: Long,
     @SerializedName("title") var title: String,
     @SerializedName("description") var description: String = "",
     @SerializedName("file_path") var filePath: String,
-    @SerializedName("recording_duration") var recordingDuration: Int,
-    @SerializedName("created_at") var createdAt: Long = Calendar.getInstance().timeInMillis
+    @SerializedName("recording_duration") var recordingDuration: String,
+    @SerializedName("created_at") var createdAt: String = Calendar.getInstance().timeInMillis.toString()
 ) {
     init {
-        require(recordingDuration >= 0) { "La duración de la grabación no puede ser negativa" }
+        require(recordingDuration >= 0.toString()) { "La duración de la grabación no puede ser negativa" }
         require(filePath.isNotBlank()) { "El path del archivo no puede estar vacío" }
     }
     companion object {
