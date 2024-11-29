@@ -1,14 +1,35 @@
+
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activities.fragments.RecordingsFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <Button
+        android:id="@+id/recognize_file"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_profile" />
+        android:layout_height="wrap_content"
+        android:text="recognize_file"/>
 
-</FrameLayout>
+    <Button
+        android:id="@+id/recognize_mic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="recognize_microphone"/>
+
+    <ToggleButton
+        android:id="@+id/pause"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textOff="pause"
+        android:textOn="continueRecognition"/>
+
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:scrollbars="vertical"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</LinearLayout>
