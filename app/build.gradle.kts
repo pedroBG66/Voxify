@@ -40,6 +40,7 @@ android {
 }
 
 dependencies {
+    implementation (libs.vosk.android)
     implementation (libs.audiowave.progressbar)
     implementation (libs.material.v190)
     implementation (libs.androidx.navigation.fragment.ktx)

@@ -19,6 +19,7 @@ speechRecognition = "1.0.0"
 sqlite = "2.4.0"
 translate = "17.0.3"
 cameraVideo = "1.4.0"
+voskAndroid = "0.3.47"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -40,6 +41,7 @@ material-v190 = { module = "com.google.android.material:material", version.ref =
 speech-recognition = { module = "com.google.mlkit:speech-recognition", version.ref = "speechRecognition" }
 translate = { module = "com.google.mlkit:translate", version.ref = "translate" }
 androidx-camera-video = { group = "androidx.camera", name = "camera-video", version.ref = "cameraVideo" }
+vosk-android = { module = "com.alphacephei:vosk-android", version.ref = "voskAndroid" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
