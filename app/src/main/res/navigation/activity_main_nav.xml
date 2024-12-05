@@ -15,8 +15,8 @@
         android:label="Search" />
 
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.voxify.activities.fragments.RecordingsFragment"
+        android:id="@+id/audioToTextFragment"
+        android:name="com.example.voxify.activities.fragments.TextToAudioFragment"
         android:label="Profile" />
 
 </navigation>

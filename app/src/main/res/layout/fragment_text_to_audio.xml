@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="#f5f5f5">
+
+
+    <!-- Botón para audio a texto -->
+    <Button
+        android:id="@+id/recognize_mic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@color/cardview_dark_background"
+        android:padding="12dp"
+        android:text="Audio to Text"
+        android:textColor="#ffffff" />
+
+    <!-- Toggle button para pausar o continuar el reconocimiento -->
+    <ToggleButton
+        android:id="@+id/pause"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textOff="Pause"
+        android:textOn="Continue Recognition"
+        android:textColor="#ffffff"
+        android:background="@color/cardview_dark_background"
+        android:layout_marginBottom="24dp"
+        android:padding="12dp"/>
+
+    <!-- Texto para mostrar el resultado -->
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start|top"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#333333"
+        android:scrollbars="vertical"
+        android:maxHeight="200dp"
+        android:layout_marginTop="16dp"
+        android:padding="12dp" />
+
+</LinearLayout>
